@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Books from "./pages/Books";
 import Update from "./pages/Update";
 import Add from "./pages/Add";
+import "./App.css"
 
 const App = () => {
   const Home = () => {
