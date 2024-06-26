@@ -2,13 +2,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Books from "./pages/Books";
 import Update from "./pages/Update";
 import Add from "./pages/Add";
-import "./App.css"
 
 const App = () => {
-  const Home = () => {
+  const Layout = () => {
     return (
-      <div>
-        <h1>This is Home Page</h1>
+      <div className="layout">
         <Outlet />
       </div>
     );
@@ -17,19 +15,21 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/books",
-      element: <Books />,
-    },
-    {
-      path: "/add",
-      element: <Add />,
-    },
-    {
-      path: "/update",
-      element: <Update />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/books",
+          element: <Books />,
+        },
+        {
+          path: "/add",
+          element: <Add />,
+        },
+        {
+          path: "/update/:id",
+          element: <Update />,
+        },
+      ],
     },
   ]);
 

@@ -41,7 +41,7 @@ const Add = () => {
   };
 
   return (
-    <div className="form">
+    <div className="add">
       <input
         type="text"
         name="title"
