@@ -1,10 +1,8 @@
 
 
 .layout{
-  padding: 0px 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 75%;
+  margin: auto;
   text-align: center;
 }
 
@@ -63,6 +61,21 @@
   input {
     padding: 10px 5px;
     width: 300px;
+  }
+}
+
+.nav{
+  ul{
+    display: flex;
+    gap: 20px;
+    
+    li{
+      a{
+        text-transform: capitalize;
+        text-decoration: none;
+      }
+      
+    }
   }
 }
 

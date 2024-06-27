@@ -2,12 +2,21 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Books from "./pages/Books";
 import Update from "./pages/Update";
 import Add from "./pages/Add";
+import Nave from "./components/Nave";
 
 const App = () => {
   const Layout = () => {
     return (
       <div className="layout">
+        <Nave />
         <Outlet />
+      </div>
+    );
+  };
+  const Home = () => {
+    return (
+      <div className="home">
+        <h1>This is Home page</h1>
       </div>
     );
   };
@@ -17,6 +26,10 @@ const App = () => {
       path: "/",
       element: <Layout />,
       children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
         {
           path: "/books",
           element: <Books />,

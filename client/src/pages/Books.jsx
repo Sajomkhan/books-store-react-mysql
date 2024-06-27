@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
-  const endRef = useRef();
 
-  useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
-  });
 
   useEffect(() => {
     const fetchAllBooks = async () => {
@@ -50,7 +46,6 @@ const Books = () => {
           </div>
         ))}
       </div>
-      <div ref={endRef}></div>
       <button>
         <Link to="/add">Add new book</Link>
       </button>
