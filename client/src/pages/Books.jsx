@@ -41,13 +41,14 @@ const Books = () => {
               Delete
             </button>
             <button className="update">
-              <Link to={`/update/${book.id}`}>Update</Link>
+              <Link to={`/update/${book.id}`}
+              state={book}>Update</Link>
             </button>
           </div>
         ))}
       </div>
       <button>
-        <Link to="/add">Add new book</Link>
+        <Link to="/add" >Add new book</Link>
       </button>
     </div>
   );

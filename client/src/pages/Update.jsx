@@ -5,26 +5,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Update = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const bookId = location.pathname.split("/")[2];
-
-  const [book, setBook] = useState({
-    title: "",
-    desc: "",
-    price: "",
-    cover: "",
-  });
-
+  
+  const [book, setBook] = useState(location.state);
   const [error, setError] = useState(null);
-
-  // const [bookCover, setBookCover] = useState({
-  //   file: null,
-  //   url: "",
-  // });
-
-  // const handleChange = (e) => {
-  //   setBook((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  // };
+  
+  const bookId = location.pathname.split("/")[2];
 
   const handleChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
@@ -41,34 +26,37 @@ const Update = () => {
     }
   };
 
-  console.log(book);
-
   return (
     <div className="update">
       <input
         type="text"
         name="title"
+        value={book.title}
         placeholder="Title"
         onChange={handleChange}
       />
       <input
         type="text"
         name="desc"
+        value={book.desc}
         placeholder="Description"
         onChange={handleChange}
       />
       <input
         type="number"
         name="price"
+        value={book.price}
         placeholder="Price"
         onChange={handleChange}
       />
       <input
         type="text"
         name="cover"
+        value={book.cover}
         placeholder="Cover"
         onChange={handleChange}
       />
+      <p style={{color: "red"}}>{error}</p>
       <button onClick={handleSubmit}>Update</button>
     </div>
   );

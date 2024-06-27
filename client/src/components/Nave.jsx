@@ -1,10 +1,10 @@
 const Nave = () => {
-  // const navLink = ["home", "books", "add book", "update book"]
+
   const navLink = [
     { nav: "home", link: "/" },
     { nav: "books", link: "/books" },
     { nav: "add book", link: "/add" },
-    { nav: "update book", link: "/update" },
+    { nav: "update book", link: "/update/:id" },
   ];
 
   return (
